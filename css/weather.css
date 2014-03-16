@@ -76,3 +76,15 @@ body {
 .ourinfo a:hover {
     color: #FF3399;
 }
+
+.button {
+	background: #FF3399;
+	border: 1px solid #000066;
+	margin: 3px;
+}
+
+.input {
+	background: #33D6FF;
+	border 1px solid #000066;
+}
+}
