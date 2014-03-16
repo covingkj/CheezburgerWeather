@@ -1,4 +1,4 @@
-getWeather("./weather.php");
+getWeather("./weather.php" + window.location.search);
 
 function getWeather(link) {
     $.getJSON(link, function(data){
@@ -8,8 +8,8 @@ function getWeather(link) {
         $('#weather-id').text(id);
         $('#weather-icon').text(icon);
 
-	var img = document.createElement("img");
-	img.setAttribute("src", 'img/kitteh/' + icon + '.png');
+		var img = document.createElement("img");
+		img.setAttribute("src", 'img/kitteh/' + icon + '.png');
         document.getElementById("kitteh-image").appendChild(img);
 
         var tempCelcius = data.main.temp - 273.15;
@@ -17,7 +17,7 @@ function getWeather(link) {
         var description = data.weather[0].description;
 
         $('#weather-desc').text(description);
-        $('#location').text(data.name);
+        $('#locationName').text(data.name);
 
         $('#degreesCelsius').text(Math.round(tempCelcius) + "°C");
         $('#degreesFahrenheit').text(Math.round(tempFahrenheit) + "°F");
